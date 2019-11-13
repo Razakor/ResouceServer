@@ -1,8 +1,11 @@
 package com.razakor.resourceserver.controllers;
 
+import com.razakor.resourceserver.document.Question;
 import com.razakor.resourceserver.services.QuestionService;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class WebController {
@@ -13,8 +16,8 @@ public class WebController {
         this.questionService = questionService;
     }
 
-    @GetMapping("/tobe")
-    public String tobe() {
-        return questionService.findAll().toString();
+    @RequestMapping(value = "/questions")
+    public List<Question> getQuestions() {
+        return questionService.findAll();
     }
 }

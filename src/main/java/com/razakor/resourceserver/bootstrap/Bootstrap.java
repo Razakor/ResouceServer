@@ -17,8 +17,7 @@ public class Bootstrap implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-
-        //Question question = new Question("To be or not to be?", "That is the question");
+        //Question question = new Question("Where are my dog?", "Here");
         //questionService.save(question);
     }
 }
