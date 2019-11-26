@@ -5,6 +5,7 @@ import com.razakor.resourceserver.repositories.QuestionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuestionService {
@@ -21,6 +22,10 @@ public class QuestionService {
 
     public List<Question> findAll() {
         return questionRepository.findAll();
+    }
+
+    public Question findById(String id) {
+        return questionRepository.findById(id).orElse(new Question());
     }
 
 }
